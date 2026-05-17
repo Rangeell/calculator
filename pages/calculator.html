@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -6,15 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator App</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/766cec8ad2.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/styles/calculator.css">
+
 </head>
 
 <body>
+    <!-- NAV AREA -->
+    <nav>
+        <div class="clock">clock</div>
+        <div class="phone-status">
+            <div class="status">
+                <span class="material-symbols-outlined icon-status">android_cell_4_bar</span>
+            </div>
+
+            <div class="status">
+                <span class="material-symbols-outlined icon-status">wifi</span>
+            </div>
+
+            <div class="status">
+                <span class="material-symbols-outlined icon-status">battery_android_6</span>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV AREA -->
+
+    <!-- HEADER AREA -->
+    <header>
+        <div class="component">
+            <span class="material-symbols-outlined icon">schedule</span>
+        </div>
+        <div class="component">
+            <i class="fa-solid fa-calculator"></i>
+        </div>
+    </header>
+    <!-- END HEADER AREA -->
+
+    <!-- MAIN AREA -->
     <main>
-        <header>
-            <nav></nav>
-        </header>
+        <section class="result">
+            <p>0</p>
+        </section>
+
+        <section class="operations">
+
+        </section>
     </main>
+    <!-- END MAIN AREA -->
 </body>
 
 </html>

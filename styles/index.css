@@ -26,7 +26,7 @@ main {
     justify-content: center;
     align-items: center;
 
-    width: clamp(300px, 50vw, 800px);
+    width: clamp(310px, 50vw, 800px);
     height: 500px;
 
     background-color: transparent;
@@ -38,11 +38,7 @@ main {
 }
 
 .iphone-frame {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
-    width: clamp(150px, 20vw, 300px);
+    width: clamp(250px, 23vw, 320px);
     aspect-ratio: 9/17;
 
     background: url('/images/iphone-frame2.png') no-repeat center/contain;
@@ -50,10 +46,6 @@ main {
 }
 
 .iphone-screen {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
     width: 72%;
     height: 78.0%;
     border-radius: 10px;
@@ -62,9 +54,8 @@ main {
     position: absolute;
     top: 50.7%;
     left: 50%;
-    transform: translate(-50%, -50%);
 
-    /* outline: 2px solid red; */
+    transform: translate(-50%, -50%);
 }
 
 #calculator-app {
