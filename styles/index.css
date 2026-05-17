@@ -23,11 +23,12 @@ body {
 
 main {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 
-    width: clamp(310px, 50vw, 800px);
-    height: 500px;
+    width: clamp(330px, 80vw, 900px);
+    height: 600px;
 
     background-color: transparent;
     backdrop-filter: blur(10px) saturate(160%);
@@ -37,8 +38,14 @@ main {
     filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.2));
 }
 
+h1 {
+    font-family: "Allura", cursive;
+    color: white;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.602);
+}
+
 .iphone-frame {
-    width: clamp(250px, 23vw, 320px);
+    width: 320px;
     aspect-ratio: 9/17;
 
     background: url('/images/iphone-frame2.png') no-repeat center/contain;
