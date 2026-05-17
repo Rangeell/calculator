@@ -94,7 +94,7 @@ header {
 .icon:is(:hover, :focus, :active) {
     background-color: var(--icons-background-color-hover);
     filter: brightness(1.5);
-    transform: scale(1.4);
+    transform: scale(1.3);
 }
 
 .svg-inline--fa {
@@ -113,7 +113,7 @@ header {
 .svg-inline--fa:is(:hover, :focus, :active) {
     background-color: var(--icons-background-color-hover);
     backdrop-filter: saturate(160%);
-    transform: scale(1.4);
+    transform: scale(1.3);
 }
 
 /* MAIN AREA */
@@ -177,13 +177,14 @@ main {
     backdrop-filter: blur(10px);
 
     font-weight: 500;
+}
 
+a {
+    color: inherit;
     transition: all .2s ease-in-out;
 }
 
-.buttons-utilities:is(:hover, :active),
-.buttons-operators:is(:hover, :active),
-.buttons-numbers:is(:hover, :active) {
+a:is(:hover, :active) {
     filter: brightness(1.3);
     transform: scale(1.2);
 }
