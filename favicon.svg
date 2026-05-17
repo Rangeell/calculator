@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- fundo -->
+  <rect x="8" y="4" width="48" height="56" rx="10" fill="#1c1c1e"/>
+
+  <!-- display -->
+  <rect x="14" y="10" width="36" height="10" rx="3" fill="#2c2c2e"/>
+
+  <!-- botões -->
+  <g fill="#d1d1d6">
+    <circle cx="18" cy="28" r="3"/>
+    <circle cx="32" cy="28" r="3"/>
+    <circle cx="46" cy="28" r="3"/>
+
+    <circle cx="18" cy="40" r="3"/>
+    <circle cx="32" cy="40" r="3"/>
+    <circle cx="46" cy="40" r="3"/>
+
+    <circle cx="18" cy="52" r="3"/>
+    <circle cx="32" cy="52" r="3"/>
+    <circle cx="46" cy="52" r="3"/>
+  </g>
+
+  <!-- botão destaque -->
+  <rect x="42" y="48" width="10" height="10" rx="2" fill="#ff9f0a"/>
+</svg>
