@@ -72,18 +72,7 @@ header {
     justify-content: center;
     align-items: center;
 
-    padding: clamp(5px, 0.8vw, 7px);
-    border-radius: 50%;
-    border: 1px solid var(--icons-border-color);
-
-    background-color: var(--icons-background-color);
-    backdrop-filter: blur(10px) saturate(160%), brightness(0.5);
-    color: var(--white_default);
-
     font-size: clamp(1rem, 2vw, 5rem);
-
-    transition: all .3s ease-in-out;
-
     font-variation-settings:
         'FILL' 0,
         'wght' 200,
@@ -91,30 +80,53 @@ header {
         'opsz' 24;
 }
 
-.icon:is(:hover, :focus, :active) {
+.component {
+    padding: clamp(5px, 0.8vw, 7px);
+    border-radius: 50%;
+    border: 1px solid var(--icons-border-color);
+    
+    background-color: var(--icons-background-color);
+    backdrop-filter: blur(10px) saturate(160%), brightness(0.5);
+    color: var(--white_default);
+    
+    transition: all .3s ease;
+}
+
+.component:is(:hover, :focus, :active) {
     background-color: var(--icons-background-color-hover);
     filter: brightness(1.5);
     transform: scale(1.3);
 }
 
+header a {
+    height: 25px;
+}
+
+/* 
+.icon:is(:hover, :focus, :active) {
+    background-color: var(--icons-background-color-hover);
+    filter: brightness(1.5);
+    transform: scale(1.3);
+} */
+
 .svg-inline--fa {
-    background-color: var(--icons-background-color);
-    backdrop-filter: blur(10px);
-    color: var(--white_default);
+    /* background-color: var(--icons-background-color); */
+    /* backdrop-filter: blur(10px); */
+    /* color: var(--white_default); */
 
     width: 15px;
     height: 15px;
-    padding: 6px;
-    border-radius: 50%;
-    border: 1px solid var(--icons-border-color);
-    transition: all .3s ease-in-out;
+    /* padding: 6px; */
+    /* border-radius: 50%; */
+    /* border: 1px solid var(--icons-border-color); */
+    /* transition: all .3s ease-in-out; */
 }
 
-.svg-inline--fa:is(:hover, :focus, :active) {
-    background-color: var(--icons-background-color-hover);
-    backdrop-filter: saturate(160%);
-    transform: scale(1.3);
-}
+/* .svg-inline--fa:is(:hover, :focus, :active) { */
+    /* background-color: var(--icons-background-color-hover); */
+    /* backdrop-filter: saturate(160%); */
+    /* transform: scale(1.3); */
+/* } */
 
 /* MAIN AREA */
 main {
