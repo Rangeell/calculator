@@ -1,4 +1,9 @@
+let today = new Date()
+let hours = today.getHours()
+let minutes =today.getMinutes()
+
 let body = document.body
+let clock = document.querySelector('#hours')
 
 let theme_button = {
     light_night: document.querySelector('#light-button'),
@@ -16,6 +21,8 @@ function hasAnyClass(element, classes) {
     })
 }
 */
+
+clock.innerHTML = `${hours}:${minutes}`
 
 // FUNCTION LIGHT/DARK THEME
 theme_button.light_night.addEventListener('click', function () {
