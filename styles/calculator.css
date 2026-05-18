@@ -100,7 +100,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding-top: 8px;
-    overflow: visible;
 }
 
 /* icons area */
@@ -143,7 +142,6 @@ header {
 header a {
     height: 40px;
     border-radius: 50%;
-    overflow: visible;
 }
 /* end icons area */
 
