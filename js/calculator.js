@@ -1,6 +1,6 @@
 let today = new Date()
-let hours = today.getHours()
-let minutes =today.getMinutes()
+let hours = String(today.getHours()).padStart(2, '0')
+let minutes = String(today.getMinutes()).padStart(2, '0')
 
 let body = document.body
 let clock = document.querySelector('#hours')
