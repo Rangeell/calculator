@@ -44,19 +44,19 @@ body.light {
 }
 
 body.pink {
-    --buttons-utilities: #ff83bd;
-    --buttons-number: #ff3fa2;
+    --buttons-utilities: #fc90c3;
+    --buttons-number: #fb2e98;
     --buttons-operator: #ce0566;
 }
 
 body.blue {
-    --buttons-utilities: #74beff;
-    --buttons-number: #469fff;
+    --buttons-utilities: #7cc1fd;
+    --buttons-number: #1787fe;
     --buttons-operator: #0062cbfc;
 }
 
 body.purple {
-    --buttons-utilities: #c57dff;
+    --buttons-utilities: #cd94fd;
     --buttons-number: #9c24ff;
     --buttons-operator: #6100b1;
 }
