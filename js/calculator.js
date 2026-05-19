@@ -1,11 +1,11 @@
-let today = new Date()
-let hours = String(today.getHours()).padStart(2, '0')
-let minutes = String(today.getMinutes()).padStart(2, '0')
+const today = new Date()
+const hours = String(today.getHours()).padStart(2, '0')
+const minutes = String(today.getMinutes()).padStart(2, '0')
 
-let body = document.body
-let clock = document.querySelector('#hours')
+const body = document.body
+const clock = document.querySelector('#hours')
 
-let theme_button = {
+const theme_button = {
     light_night: document.querySelector('#light-button'),
     sunny_icon: document.querySelector('#sunny-icon'),
     pink: document.querySelector('#pink-theme'),
