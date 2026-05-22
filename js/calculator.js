@@ -18,6 +18,10 @@ const theme_button = {
     default: document.querySelector('#default-theme')
 }
 
+const button_Number = {
+    
+}
+
 /*
 function hasAnyClass(element, classes) {
     return classes.some(function(className) {
@@ -28,6 +32,13 @@ function hasAnyClass(element, classes) {
 
 clock.innerHTML = `${hours}:${minutes}`
 
+// FUNCTION OPEN MENU
+button_Menu.addEventListener('click', function(){
+    button_Menu.classList.toggle('menu-open')
+    themes_container.classList.toggle('themes-open')
+
+})
+
 // FUNCTION LIGHT/DARK THEME
 theme_button.light_night.addEventListener('click', function () {
     if (!body.classList.contains('light')) {
@@ -37,13 +48,6 @@ theme_button.light_night.addEventListener('click', function () {
         body.classList.remove('light')
         theme_button.sunny_icon.innerHTML = 'sunny'
     }
-})
-
-// FUNCTION OPEN MENU
-button_Menu.addEventListener('click', function(){
-    button_Menu.classList.toggle('menu-open')
-    themes_container.classList.toggle('themes-open')
-
 })
 
 // FUNTION PINK THEME
