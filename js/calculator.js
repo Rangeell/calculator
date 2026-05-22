@@ -35,6 +35,7 @@ function hasAnyClass(element, classes) {
 */
 
 clock.innerHTML = `${hours}:${minutes}`
+
 button_Calculator.utilities.forEach(function(button){
     button.addEventListener('click', function(){
         if (button.innerText === 'AC') {
