@@ -200,7 +200,7 @@ header {
     pointer-events: none;
     
     z-index: 1;
-    transition: all .3s ease;
+    transition: all .5s ease;
 }
 
 .themes.themes-open {
