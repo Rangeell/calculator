@@ -7,7 +7,6 @@ const clock = document.querySelector('#hours')
 
 const button_Menu = document.querySelector('.menu')
 const themes_container = document.querySelector('.themes')
-console.log(themes_container)
 
 const theme_button = {
     light_night: document.querySelector('#light-button'),
@@ -18,9 +17,14 @@ const theme_button = {
     default: document.querySelector('#default-theme')
 }
 
-const button_Number = {
-    
+
+const button_Calculator = {
+    numbers: document.querySelectorAll('.buttons-numbers'),
+    utilities: document.querySelectorAll('.buttons-utilities')
 }
+
+const res = document.querySelector('.result')
+console.log(button_Calculator.numbers)
 
 /*
 function hasAnyClass(element, classes) {
@@ -31,9 +35,26 @@ function hasAnyClass(element, classes) {
 */
 
 clock.innerHTML = `${hours}:${minutes}`
+button_Calculator.utilities.forEach(function(button){
+    button.addEventListener('click', function(){
+        if (button.innerText === 'AC') {
+            res.innerText = '0'
+        }
+    })
+})
+
+
+button_Calculator.numbers.forEach(function(button){
+    button.addEventListener('click', function(){
+        if (res.innerText === '0') {
+            res.innerText = button.textContent
+        } else
+        res.innerText += button.textContent
+    })
+})
 
 // FUNCTION OPEN MENU
-button_Menu.addEventListener('click', function(){
+button_Menu.addEventListener('click', function () {
     button_Menu.classList.toggle('menu-open')
     themes_container.classList.toggle('themes-open')
 
