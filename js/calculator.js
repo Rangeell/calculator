@@ -5,6 +5,10 @@ const minutes = String(today.getMinutes()).padStart(2, '0')
 const body = document.body
 const clock = document.querySelector('#hours')
 
+const button_Menu = document.querySelector('.menu')
+const themes_container = document.querySelector('.themes')
+console.log(themes_container)
+
 const theme_button = {
     light_night: document.querySelector('#light-button'),
     sunny_icon: document.querySelector('#sunny-icon'),
@@ -33,6 +37,13 @@ theme_button.light_night.addEventListener('click', function () {
         body.classList.remove('light')
         theme_button.sunny_icon.innerHTML = 'sunny'
     }
+})
+
+// FUNCTION OPEN MENU
+button_Menu.addEventListener('click', function(){
+    button_Menu.classList.toggle('menu-open')
+    themes_container.classList.toggle('themes-open')
+
 })
 
 // FUNTION PINK THEME

@@ -100,6 +100,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding-top: 8px;
+    position: relative;
 }
 
 /* icons area */
@@ -126,7 +127,6 @@ header {
     border: 1px solid var(--icons-border-color);
     width: 1.7rem;
     height: 1.7rem;
-    aspect-ratio: 1/1;
 
     background-color: var(--icons-background-color);
     backdrop-filter: blur(10px) saturate(160%), brightness(0.5);
@@ -147,19 +147,67 @@ header {
     height: 15px;
 }
 
-header a {
-    height: 40px;
-    border-radius: 50%;
-}
 /* end icons area */
 
 /* Themes color area */
+
+/* Menu area*/
+.menu {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2px;
+}
+
+.menu:is(:hover, :focus-visible) {
+    transform: none;
+}
+
+.menu span {
+    background-color: var(--white_default);
+    width: 75%;
+    height: 1px;
+    border-radius: 999px;
+    transition: all .3s ease-in-out;
+}
+
+.menu-open span:nth-child(1) {
+    transform: translateY(2px) rotate(43deg);
+}
+
+.menu-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open span:nth-child(3) {
+    transform: translateY(-3.5px) rotate(-43deg);
+}
+
 .themes {
-    border-radius: inherit;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 5px;
+    
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--buttons-utilities);
+    backdrop-filter: blur(10px) saturate(160%);
+
+    position: absolute;
+    left: 22%;
+    top: 7%;
+    opacity: 0;
+    pointer-events: none;
+    
+    z-index: 1;
+    transition: all .3s ease;
+}
+
+.themes.themes-open {
+    left: 22%;
+    top: 40px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .colors-themes-container {
@@ -169,7 +217,6 @@ header a {
 .colors-themes-items {
     display: flex;
     justify-content: space-evenly;
-    gap: 5px;
 }
 
 .color-theme {
@@ -276,6 +323,14 @@ main {
 
     font-weight: 500;
     transition: all .5s ease;
+}
+
+.buttons-utilities:is(:hover, :focus-visible),
+.buttons-operators:is(:hover, :focus-visible),
+.buttons-numbers:is(:hover, :focus-visible) {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(1.5);
 }
 
 /* END BUTTONS SECTION AREA */
