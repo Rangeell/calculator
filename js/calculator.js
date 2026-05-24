@@ -35,14 +35,25 @@ function hasAnyClass(element, classes) {
 
 clock.innerHTML = `${hours}:${minutes}`
 
+// FUNCTION BACKSPACE and AC
 button_Calculator.utilities.forEach(function (button) {
     button.addEventListener('click', function () {
-        if (button.innerText === 'AC') {
-            res.innerText = '0'
+        switch (button.innerText) {
+            case 'backspace':
+                res.innerText = res.innerText.slice(0, -1)
+                if (res.innerText === '') {
+                    res.innerText = '0'
+                }
+                break
+
+            case 'AC':
+                res.innerText = '0'
+                break
         }
     })
 })
 
+// FUNCTION ADD NUMBER
 button_Calculator.numbers.forEach(function (button) {
     button.addEventListener('click', function () {
         if (res.innerText === '0') {
