@@ -1,126 +1,155 @@
-const today = new Date()
-const hours = String(today.getHours()).padStart(2, '0')
-const minutes = String(today.getMinutes()).padStart(2, '0')
+(function myScope() {
+    const today = new Date()
+    const hours = String(today.getHours()).padStart(2, '0')
+    const minutes = String(today.getMinutes()).padStart(2, '0')
 
-const body = document.body
-const clock = document.querySelector('#hours')
+    const body = document.body
+    const clock = document.querySelector('#hours')
 
-const button_Menu = document.querySelector('.menu')
-const themes_container = document.querySelector('.themes')
+    const button_Menu = document.querySelector('.menu')
+    const themes_container = document.querySelector('.themes')
 
-const theme_button = {
-    light_night: document.querySelector('#light-button'),
-    sunny_icon: document.querySelector('#sunny-icon'),
-    pink: document.querySelector('#pink-theme'),
-    blue: document.querySelector('#blue-theme'),
-    purple: document.querySelector('#purple-theme'),
-    default: document.querySelector('#default-theme')
-}
+    const theme_button = {
+        light_night: document.querySelector('#light-button'),
+        sunny_icon: document.querySelector('#sunny-icon'),
+        pink: document.querySelector('#pink-theme'),
+        blue: document.querySelector('#blue-theme'),
+        purple: document.querySelector('#purple-theme'),
+        default: document.querySelector('#default-theme')
+    }
 
-const button_Calculator = {
-    numbers: document.querySelectorAll('.buttons-numbers'),
-    utilities: document.querySelectorAll('.buttons-utilities')
-}
+    const button_Calculator = {
+        numbers: document.querySelectorAll('.buttons-numbers'),
+        utilities: document.querySelectorAll('.buttons-utilities'),
+        operators: document.querySelectorAll('.buttons-operators')
+    }
 
-const res = document.querySelector('.result')
-console.log(button_Calculator.numbers)
+    const res = document.querySelector('.result')
 
-/*
-function hasAnyClass(element, classes) {
-    return classes.some(function(className) {
-        return element.classList.contains(className)
+    /*
+    function hasAnyClass(element, classes) {
+        return classes.some(function(className) {
+            return element.classList.contains(className)
+        })
+    }
+    */
+
+    clock.innerHTML = `${hours}:${minutes}`
+
+    // FUNCTION ADD NUMBER
+    button_Calculator.numbers.forEach(function (button) {
+        button.addEventListener('click', function () {
+            if (res.innerText === '0') {
+                res.innerText = button.textContent
+            } else
+                res.innerText += button.textContent
+        })
     })
-}
-*/
 
-clock.innerHTML = `${hours}:${minutes}`
+    // FUNCTION BACKSPACE and AC
+    button_Calculator.utilities.forEach(function (button) {
+        button.addEventListener('click', function () {
+            switch (button.innerText) {
+                case 'backspace':
+                    res.innerText = res.innerText.slice(0, -1)
+                    if (res.innerText === '') {
+                        res.innerText = '0'
+                    }
+                    break
 
-// FUNCTION BACKSPACE and AC
-button_Calculator.utilities.forEach(function (button) {
-    button.addEventListener('click', function () {
-        switch (button.innerText) {
-            case 'backspace':
-                res.innerText = res.innerText.slice(0, -1)
-                if (res.innerText === '') {
+                case 'AC':
                     res.innerText = '0'
-                }
-                break
+            }
+        })
+    })
 
-            case 'AC':
-                res.innerText = '0'
-                break
+    // FUNCTION CALCULATE
+    button_Calculator.operators.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const comando = button.innerText
+
+            if (comando !== '=') {
+                res.innerText += comando
+            } else {
+                let expressao = res.innerText
+
+                if (expressao.indexOf('+') !== - 1) {
+                    let partes = expressao.split('+')
+                    console.log(partes)
+
+                    let soma = 0
+                    for (let i in partes) {
+                        soma += Number(partes[i])
+
+                        res.innerText = soma
+                    }
+                }
+            }
+
+            partes = []
+            console.log(partes)
+        })
+    })
+
+    // FUNCTION OPEN MENU
+    button_Menu.addEventListener('click', function () {
+        button_Menu.classList.toggle('menu-open')
+        themes_container.classList.toggle('themes-open')
+    })
+
+    // FUNCTION LIGHT/DARK THEME
+    theme_button.light_night.addEventListener('click', function () {
+        if (!body.classList.contains('light')) {
+            body.classList.add('light')
+            theme_button.sunny_icon.innerHTML = 'nightlight'
+        } else {
+            body.classList.remove('light')
+            theme_button.sunny_icon.innerHTML = 'sunny'
         }
     })
-})
 
-// FUNCTION ADD NUMBER
-button_Calculator.numbers.forEach(function (button) {
-    button.addEventListener('click', function () {
-        if (res.innerText === '0') {
-            res.innerText = button.textContent
-        } else
-            res.innerText += button.textContent
+    // FUNTION PINK THEME
+    theme_button.pink.addEventListener('click', function () {
+        if (!body.classList.contains('pink')) {
+            body.classList.add('pink')
+            body.classList.remove('blue')
+            body.classList.remove('purple')
+        } else {
+            body.classList.remove('pink')
+        }
     })
-})
 
-// FUNCTION OPEN MENU
-button_Menu.addEventListener('click', function () {
-    button_Menu.classList.toggle('menu-open')
-    themes_container.classList.toggle('themes-open')
-})
+    // FUNCTION BLUE THEME
+    theme_button.blue.addEventListener('click', function () {
+        if (!body.classList.contains('blue')) {
+            body.classList.add('blue')
+            body.classList.remove('pink')
+            body.classList.remove('purple')
+        } else {
+            body.classList.remove('blue')
+        }
+    })
 
-// FUNCTION LIGHT/DARK THEME
-theme_button.light_night.addEventListener('click', function () {
-    if (!body.classList.contains('light')) {
-        body.classList.add('light')
-        theme_button.sunny_icon.innerHTML = 'nightlight'
-    } else {
-        body.classList.remove('light')
-        theme_button.sunny_icon.innerHTML = 'sunny'
-    }
-})
+    // FUNCTION PURPLE THEME
+    theme_button.purple.addEventListener('click', function () {
+        if (!body.classList.contains('purple')) {
+            body.classList.add('purple')
+            body.classList.remove('pink')
+            body.classList.remove('blue')
+        } else {
+            body.classList.remove('purple')
+        }
+    })
 
-// FUNTION PINK THEME
-theme_button.pink.addEventListener('click', function () {
-    if (!body.classList.contains('pink')) {
-        body.classList.add('pink')
-        body.classList.remove('blue')
-        body.classList.remove('purple')
-    } else {
-        body.classList.remove('pink')
-    }
-})
+    // FUNCTION RESETE TO DEFAULT THEME
+    theme_button.default.addEventListener('click', function () {
+        if (body.classList.contains('pink') ||
+            body.classList.contains('blue') ||
+            body.classList.contains('purple')) {
 
-// FUNCTION BLUE THEME
-theme_button.blue.addEventListener('click', function () {
-    if (!body.classList.contains('blue')) {
-        body.classList.add('blue')
-        body.classList.remove('pink')
-        body.classList.remove('purple')
-    } else {
-        body.classList.remove('blue')
-    }
-})
-
-// FUNCTION PURPLE THEME
-theme_button.purple.addEventListener('click', function () {
-    if (!body.classList.contains('purple')) {
-        body.classList.add('purple')
-        body.classList.remove('pink')
-        body.classList.remove('blue')
-    } else {
-        body.classList.remove('purple')
-    }
-})
-
-// FUNCTION RESETE TO DEFAULT THEME
-theme_button.default.addEventListener('click', function () {
-    if (body.classList.contains('pink') ||
-        body.classList.contains('blue') ||
-        body.classList.contains('purple')) {
-
-        body.classList.remove('pink')
-        body.classList.remove('blue')
-        body.classList.remove('purple')
-    }
-})
+            body.classList.remove('pink')
+            body.classList.remove('blue')
+            body.classList.remove('purple')
+        }
+    })
+})()
