@@ -67,27 +67,27 @@
     button_Calculator.operators.forEach(function (button) {
         button.addEventListener('click', function () {
             const comando = button.innerText
+            let expressao = res.innerText
+            let ultimoCaractere = expressao.slice(-1)
+            let operadores = ['+', '-', 'x', '/']
 
             if (comando !== '=') {
-                res.innerText += comando
+                if (operadores.includes(ultimoCaractere) && operadores.includes(comando)) {
+                    res.innerText = expressao.slice(0, -1) + comando
+                } else {
+                    res.innerText += comando
+                }
             } else {
-                let expressao = res.innerText
-
                 if (expressao.indexOf('+') !== - 1) {
                     let partes = expressao.split('+')
                     console.log(partes)
-
                     let soma = 0
                     for (let i in partes) {
                         soma += Number(partes[i])
-
                         res.innerText = soma
                     }
                 }
             }
-
-            partes = []
-            console.log(partes)
         })
     })
 
