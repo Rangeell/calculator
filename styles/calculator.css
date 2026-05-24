@@ -93,7 +93,6 @@ nav {
     align-items: center;
     gap: 5px;
 }
-/* END NAV AREA */
 
 /* HEADER AREA */
 header {
@@ -147,9 +146,6 @@ header {
     height: 15px;
 }
 
-/* end icons area */
-
-/* Themes color area */
 
 /* Menu area*/
 .menu {
@@ -182,6 +178,7 @@ header {
     transform: translateY(-3.5px) rotate(-43deg);
 }
 
+/* Themes color area */
 .themes {
     display: flex;
     flex-flow: row wrap;
@@ -258,9 +255,6 @@ header {
     transform: scale(1.3);
 }
 
-/* end themes area */
-/* END HEADER AREA */
-
 /* MAIN AREA */
 main {
     width: 100%;
@@ -332,5 +326,4 @@ main {
     transform: scale(1.1);
     filter: brightness(1.5);
 }
-
 /* END BUTTONS SECTION AREA */

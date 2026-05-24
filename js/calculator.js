@@ -17,7 +17,6 @@ const theme_button = {
     default: document.querySelector('#default-theme')
 }
 
-
 const button_Calculator = {
     numbers: document.querySelectorAll('.buttons-numbers'),
     utilities: document.querySelectorAll('.buttons-utilities')
@@ -44,7 +43,6 @@ button_Calculator.utilities.forEach(function (button) {
     })
 })
 
-
 button_Calculator.numbers.forEach(function (button) {
     button.addEventListener('click', function () {
         if (res.innerText === '0') {
@@ -58,7 +56,6 @@ button_Calculator.numbers.forEach(function (button) {
 button_Menu.addEventListener('click', function () {
     button_Menu.classList.toggle('menu-open')
     themes_container.classList.toggle('themes-open')
-
 })
 
 // FUNCTION LIGHT/DARK THEME
