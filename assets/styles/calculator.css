@@ -28,7 +28,7 @@
     --icons-background-color: #33333353;
     --icons-background-color-hover: #ffffff4c;
 
-    --icons-border-color: #ffffff1f;
+    --icons-border-color: #ffffff28;
 
     --icons-theme-pink: #ff3fa2;
     --icons-theme-blue: #4da3ff;
@@ -184,7 +184,7 @@ header {
     flex-flow: row wrap;
     justify-content: center;
     gap: 5px;
-    
+
     padding: 5px;
     border-radius: 10px;
     background-color: var(--buttons-utilities);
@@ -195,7 +195,7 @@ header {
     top: 7%;
     opacity: 0;
     pointer-events: none;
-    
+
     z-index: 1;
     transition: all .3s cubic-bezier(0.55, 0, 1, 0.45);
 }
@@ -220,7 +220,6 @@ header {
 
 .color-theme {
     border-radius: 50%;
-    /* width: 1.5rem; */
     aspect-ratio: 1/1;
     padding: 9px;
 }
@@ -280,6 +279,7 @@ main {
     overflow-y: hidden;
     white-space: nowrap;
     line-height: 2.5;
+
 }
 
 .result::-webkit-scrollbar {
@@ -299,16 +299,34 @@ section.buttons {
 
 .history {
     width: 220px;
-    height: 50%;
-    
+    height: 1%;
+
     background-color: rgba(99, 98, 98, 0.642);
-    backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px) saturate(180%) brightness(1.2);
     border: 1.8px solid var(--icons-border-color);
     border-radius: 8px;
     
+    pointer-events: none;
+    opacity: 0;
+   
     position: absolute;
     bottom: 0;
+
+    transition: all .3s cubic-bezier(0.55, 0, 1, 0.45);
 }
+
+.history.history-open {
+    width: 220px;
+    height: 67%;
+
+    pointer-events: auto;
+    opacity: 1;
+    
+    position: absolute;
+    bottom: 0;
+    transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
 
 /* buttons */
 .buttons-utilities {

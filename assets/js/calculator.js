@@ -4,10 +4,16 @@
     const minutes = String(today.getMinutes()).padStart(2, '0')
 
     const body = document.body
+    const res = document.querySelector('.result')
     const clock = document.querySelector('#hours')
 
     const button_Menu = document.querySelector('.menu')
-    const themes_container = document.querySelector('.themes')
+    const themes_Container = document.querySelector('.themes')
+
+    const history = {
+        container: document.querySelector('.history'),
+        button: document.querySelector('#history-button')
+    }
 
     const theme_button = {
         light_night: document.querySelector('#light-button'),
@@ -23,8 +29,6 @@
         utilities: document.querySelectorAll('.buttons-utilities'),
         operators: document.querySelectorAll('.buttons-operators')
     }
-
-    const res = document.querySelector('.result')
 
     /*
     function hasAnyClass(element, classes) {
@@ -99,7 +103,12 @@
     // FUNCTION OPEN MENU
     button_Menu.addEventListener('click', function () {
         button_Menu.classList.toggle('menu-open')
-        themes_container.classList.toggle('themes-open')
+        themes_Container.classList.toggle('themes-open')
+    })
+
+    // FUNCTION OPEN HISTORY
+    history.button.addEventListener('click', function(){
+        history.container.classList.toggle('history-open')
     })
 
     // FUNCTION LIGHT/DARK THEME
