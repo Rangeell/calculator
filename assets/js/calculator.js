@@ -41,8 +41,10 @@
         button.addEventListener('click', function () {
             if (res.innerText === '0') {
                 res.innerText = button.textContent
-            } else
+            } else {
                 res.innerText += button.textContent
+                res.scrollLeft = res.scrollWidth
+            }
         })
     })
 
@@ -59,6 +61,7 @@
 
                 case 'AC':
                     res.innerText = '0'
+                    break
             }
         })
     })
@@ -74,8 +77,10 @@
             if (comando !== '=') {
                 if (operadores.includes(ultimoCaractere) && operadores.includes(comando)) {
                     res.innerText = expressao.slice(0, -1) + comando
+                    res.scrollLeft = res.scrollWidth
                 } else {
                     res.innerText += comando
+                    res.scrollLeft = res.scrollWidth
                 }
             } else {
                 if (expressao.indexOf('+') !== - 1) {
@@ -99,12 +104,14 @@
 
     // FUNCTION LIGHT/DARK THEME
     theme_button.light_night.addEventListener('click', function () {
+        const icon = theme_button.sunny_icon
+
         if (!body.classList.contains('light')) {
             body.classList.add('light')
-            theme_button.sunny_icon.innerHTML = 'nightlight'
+            icon.innerHTML = 'nightlight'
         } else {
             body.classList.remove('light')
-            theme_button.sunny_icon.innerHTML = 'sunny'
+            icon.innerHTML = 'sunny'
         }
     })
 
@@ -112,8 +119,7 @@
     theme_button.pink.addEventListener('click', function () {
         if (!body.classList.contains('pink')) {
             body.classList.add('pink')
-            body.classList.remove('blue')
-            body.classList.remove('purple')
+            body.classList.remove('blue', 'purple')
         } else {
             body.classList.remove('pink')
         }
@@ -123,8 +129,7 @@
     theme_button.blue.addEventListener('click', function () {
         if (!body.classList.contains('blue')) {
             body.classList.add('blue')
-            body.classList.remove('pink')
-            body.classList.remove('purple')
+            body.classList.remove('pink', 'purple')
         } else {
             body.classList.remove('blue')
         }
@@ -134,8 +139,7 @@
     theme_button.purple.addEventListener('click', function () {
         if (!body.classList.contains('purple')) {
             body.classList.add('purple')
-            body.classList.remove('pink')
-            body.classList.remove('blue')
+            body.classList.remove('pink', 'blue')
         } else {
             body.classList.remove('purple')
         }
@@ -147,9 +151,7 @@
             body.classList.contains('blue') ||
             body.classList.contains('purple')) {
 
-            body.classList.remove('pink')
-            body.classList.remove('blue')
-            body.classList.remove('purple')
+            body.classList.remove('pink', 'blue', 'purple')
         }
     })
 })()
