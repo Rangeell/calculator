@@ -107,7 +107,7 @@
     })
 
     // FUNCTION OPEN HISTORY
-    history.button.addEventListener('click', function(){
+    history.button.addEventListener('click', function () {
         history.container.classList.toggle('history-open')
     })
 
