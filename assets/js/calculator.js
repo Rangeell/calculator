@@ -1,20 +1,16 @@
 (function myScope() {
-    const today = new Date()
-    const hours = String(today.getHours()).padStart(2, '0')
-    const minutes = String(today.getMinutes()).padStart(2, '0')
-
+    
     const body = document.body
     const res = document.querySelector('.result')
-    const clock = document.querySelector('#hours')
-
+    
     const button_Menu = document.querySelector('.menu')
     const themes_Container = document.querySelector('.themes')
-
+    
     const history = {
         container: document.querySelector('.history'),
         button: document.querySelector('#history-button')
     }
-
+    
     const theme_button = {
         light_night: document.querySelector('#light-button'),
         sunny_icon: document.querySelector('#sunny-icon'),
@@ -29,6 +25,18 @@
         utilities: document.querySelectorAll('.buttons-utilities'),
         operators: document.querySelectorAll('.buttons-operators')
     }
+    
+    function getTime(clock) {
+        const today = new Date()
+        const time = today.toLocaleString('pt-BR', { timeStyle: 'short' })
+        return clock.innerText = `${time}`
+    }
+    
+    function setTime() {
+        const clock = document.querySelector('#hours')
+        getTime(clock)
+    }
+    setTime()
 
     /*
     function hasAnyClass(element, classes) {
@@ -38,7 +46,6 @@
     }
     */
 
-    clock.innerHTML = `${hours}:${minutes}`
 
     // FUNCTION ADD NUMBER
     button_Calculator.numbers.forEach(function (button) {
