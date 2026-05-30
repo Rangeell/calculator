@@ -30,6 +30,22 @@
     }
     setTime()
 
+    // FUNCTION OPEN MENU
+    const button = document.querySelector('.menu')
+    button.addEventListener('click', function () {
+        const themesContainer = document.querySelector('.themes')
+
+        this.classList.toggle('menu-open')
+        themesContainer.classList.toggle('themes-open')
+    })
+
+    // FUNCTION OPEN HISTORY
+    const buttonHistory = document.querySelector('#history-button')
+    buttonHistory.addEventListener('click', function () {
+        const container = document.querySelector('.history')
+        container.classList.toggle('history-open')
+    })
+
     /*
     function hasAnyClass(element, classes) {
         return classes.some(function(className) {
@@ -37,29 +53,6 @@
         })
     }
     */
-
-    // FUNCTION OPEN MENU
-    function openMenuThemes() {
-        const button = document.querySelector('.menu')
-        const themes_Container = document.querySelector('.themes')
-
-        button.addEventListener('click', function () {
-            button.classList.toggle('menu-open')
-            themes_Container.classList.toggle('themes-open')
-        })
-    }
-    openMenuThemes()
-
-    // FUNCTION OPEN HISTORY
-    function openHistoryCard() {
-        const container = document.querySelector('.history')
-        const button = document.querySelector('#history-button')
-
-        button.addEventListener('click', function () {
-            container.classList.toggle('history-open')
-        })
-    }
-    openHistoryCard()
 
     // FUNCTION ADD NUMBER
     button_Calculator.numbers.forEach(function (button) {
