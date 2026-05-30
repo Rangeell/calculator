@@ -1,16 +1,8 @@
 (function myScope() {
-    
+
     const body = document.body
     const res = document.querySelector('.result')
-    
-    const button_Menu = document.querySelector('.menu')
-    const themes_Container = document.querySelector('.themes')
-    
-    const history = {
-        container: document.querySelector('.history'),
-        button: document.querySelector('#history-button')
-    }
-    
+
     const theme_button = {
         light_night: document.querySelector('#light-button'),
         sunny_icon: document.querySelector('#sunny-icon'),
@@ -25,13 +17,13 @@
         utilities: document.querySelectorAll('.buttons-utilities'),
         operators: document.querySelectorAll('.buttons-operators')
     }
-    
+
     function getTime(clock) {
         const today = new Date()
         const time = today.toLocaleString('pt-BR', { timeStyle: 'short' })
         return clock.innerText = `${time}`
     }
-    
+
     function setTime() {
         const clock = document.querySelector('#hours')
         getTime(clock)
@@ -46,6 +38,28 @@
     }
     */
 
+    // FUNCTION OPEN MENU
+    function openMenuThemes() {
+        const button = document.querySelector('.menu')
+        const themes_Container = document.querySelector('.themes')
+
+        button.addEventListener('click', function () {
+            button.classList.toggle('menu-open')
+            themes_Container.classList.toggle('themes-open')
+        })
+    }
+    openMenuThemes()
+
+    // FUNCTION OPEN HISTORY
+    function openHistoryCard() {
+        const container = document.querySelector('.history')
+        const button = document.querySelector('#history-button')
+
+        button.addEventListener('click', function () {
+            container.classList.toggle('history-open')
+        })
+    }
+    openHistoryCard()
 
     // FUNCTION ADD NUMBER
     button_Calculator.numbers.forEach(function (button) {
@@ -105,17 +119,6 @@
                 }
             }
         })
-    })
-
-    // FUNCTION OPEN MENU
-    button_Menu.addEventListener('click', function () {
-        button_Menu.classList.toggle('menu-open')
-        themes_Container.classList.toggle('themes-open')
-    })
-
-    // FUNCTION OPEN HISTORY
-    history.button.addEventListener('click', function () {
-        history.container.classList.toggle('history-open')
     })
 
     // FUNCTION LIGHT/DARK THEME
