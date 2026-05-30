@@ -262,7 +262,7 @@ header {
 #purple-theme:is(:hover, :focus-visible),
 #default-theme:is(:hover, :focus-visible) {
     cursor: pointer;
-    filter: brightness(1.5);
+    filter: brightness(1.2);
     transform: scale(1.3);
 }
 
@@ -365,6 +365,7 @@ section.buttons {
     border-radius: 50%;
     border: 1px solid var(--icons-border-color);
 
+    color: var(--white_default);
     backdrop-filter: blur(10px);
 
     font-weight: 500;
