@@ -17,10 +17,10 @@
         utilities: document.querySelectorAll('.buttons-utilities'),
         operators: document.querySelectorAll('.buttons-operators')
     }
-
+    
     function getTime(clock) {
         const today = new Date()
-        const time = today.toLocaleString('pt-BR', { timeStyle: 'short' })
+        const time = today.toLocaleTimeString('pt-BR', {timeStyle: 'short'})
         return clock.innerText = `${time}`
     }
 
@@ -29,6 +29,7 @@
         getTime(clock)
     }
     setTime()
+    setInterval(setTime, 1000)
 
     // FUNCTION OPEN MENU
     const button = document.querySelector('.menu')
