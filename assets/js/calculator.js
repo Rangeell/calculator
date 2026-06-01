@@ -17,10 +17,11 @@
         utilities: document.querySelectorAll('.buttons-utilities'),
         operators: document.querySelectorAll('.buttons-operators')
     }
-    
+
+    // FUNCTIONS TO GET  & SET TIME IN CLOCK
     function getTime(clock) {
         const today = new Date()
-        const time = today.toLocaleTimeString('pt-BR', {timeStyle: 'short'})
+        const time = today.toLocaleTimeString('pt-BR', { timeStyle: 'short' })
         return clock.innerText = `${time}`
     }
 
