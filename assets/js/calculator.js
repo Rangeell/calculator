@@ -1,23 +1,5 @@
 (function myScope() {
 
-    const body = document.body
-    const res = document.querySelector('.result')
-
-    const theme_button = {
-        light_night: document.querySelector('#light-button'),
-        sunny_icon: document.querySelector('#sunny-icon'),
-        pink: document.querySelector('#pink-theme'),
-        blue: document.querySelector('#blue-theme'),
-        purple: document.querySelector('#purple-theme'),
-        default: document.querySelector('#default-theme')
-    }
-
-    const button_Calculator = {
-        numbers: document.querySelectorAll('.buttons-numbers'),
-        utilities: document.querySelectorAll('.buttons-utilities'),
-        operators: document.querySelectorAll('.buttons-operators')
-    }
-
     // FUNCTIONS TO GET  & SET TIME IN CLOCK
     function getTime(clock) {
         const today = new Date()
@@ -56,7 +38,16 @@
     }
     */
 
-    // FUNCTION ADD NUMBER
+    // CALCULATOR AREA
+    const res = document.querySelector('.result')
+
+    const button_Calculator = {
+        numbers: document.querySelectorAll('.buttons-numbers'),
+        utilities: document.querySelectorAll('.buttons-utilities'),
+        operators: document.querySelectorAll('.buttons-operators')
+    }
+
+    // function add number
     button_Calculator.numbers.forEach(function (button) {
         button.addEventListener('click', function () {
             if (res.innerText === '0') {
@@ -68,7 +59,7 @@
         })
     })
 
-    // FUNCTION BACKSPACE and AC
+    // function backspace & AC
     button_Calculator.utilities.forEach(function (button) {
         button.addEventListener('click', function () {
             switch (button.innerText) {
@@ -86,7 +77,7 @@
         })
     })
 
-    // FUNCTION CALCULATE
+    // function calculate
     button_Calculator.operators.forEach(function (button) {
         button.addEventListener('click', function () {
             const comando = button.innerText
@@ -116,9 +107,13 @@
         })
     })
 
-    // FUNCTION LIGHT/DARK THEME
-    theme_button.light_night.addEventListener('click', function () {
-        const icon = theme_button.sunny_icon
+    // THEMES AREA
+    const body = document.body
+
+    // function light/dark theme
+    const buttonLightDark = document.querySelector('#light-button')
+    buttonLightDark.addEventListener('click', function () {
+        const icon = document.querySelector('#sunny-icon')
 
         if (!body.classList.contains('light')) {
             body.classList.add('light')
@@ -129,7 +124,14 @@
         }
     })
 
-    // FUNTION PINK THEME
+    const theme_button = {
+        pink: document.querySelector('#pink-theme'),
+        blue: document.querySelector('#blue-theme'),
+        purple: document.querySelector('#purple-theme'),
+        default: document.querySelector('#default-theme')
+    }
+
+    // function pink theme
     theme_button.pink.addEventListener('click', function () {
         if (!body.classList.contains('pink')) {
             body.classList.add('pink')
@@ -139,7 +141,7 @@
         }
     })
 
-    // FUNCTION BLUE THEME
+    // function blue theme
     theme_button.blue.addEventListener('click', function () {
         if (!body.classList.contains('blue')) {
             body.classList.add('blue')
@@ -149,7 +151,7 @@
         }
     })
 
-    // FUNCTION PURPLE THEME
+    // function purple theme
     theme_button.purple.addEventListener('click', function () {
         if (!body.classList.contains('purple')) {
             body.classList.add('purple')
@@ -159,13 +161,8 @@
         }
     })
 
-    // FUNCTION RESETE TO DEFAULT THEME
+    // function reset to default theme
     theme_button.default.addEventListener('click', function () {
-        if (body.classList.contains('pink') ||
-            body.classList.contains('blue') ||
-            body.classList.contains('purple')) {
-
-            body.classList.remove('pink', 'blue', 'purple')
-        }
+        body.classList.remove('pink', 'blue', 'purple')
     })
 })()
