@@ -96,12 +96,11 @@
             } else {
                 if (expressao.indexOf('+') !== - 1) {
                     let partes = expressao.split('+')
-                    console.log(partes)
-                    let soma = 0
-                    for (let i in partes) {
-                        soma += Number(partes[i])
-                        res.innerText = soma
+                    let sum = 0
+                    for (let v of partes) {
+                        sum += Number(v)
                     }
+                    res.innerText = sum
                 }
             }
         })
