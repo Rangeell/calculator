@@ -1,5 +1,6 @@
 (function myScope() {
 
+    // FUNCTION GET & SET TIME ON CLOCK
     function getTime(clock) {
         const today = new Date()
         const time = today.toLocaleTimeString('pt-BR', {

@@ -1,0 +1,48 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+
+    <!-- corpo -->
+    <circle
+        cx="256"
+        cy="290"
+        r="150"
+        fill="#FFA500"/>
+
+    <!-- botão superior -->
+    <rect
+        x="236"
+        y="105"
+        width="40"
+        height="55"
+        rx="20"
+        fill="#FFA500"/>
+
+    <!-- botão lateral -->
+    <rect
+        x="346"
+        y="132"
+        width="55"
+        height="26"
+        rx="13"
+        transform="rotate(38 373 145)"
+        fill="#FFA500"/>
+
+    <!-- ponteiro -->
+    <line
+        x1="256"
+        y1="290"
+        x2="256"
+        y2="190"
+        stroke="#111111"
+        stroke-width="24"
+        stroke-linecap="round"/>
+
+    <!-- centro -->
+    <circle
+        cx="256"
+        cy="290"
+        r="24"
+        fill="#111111"/>
+
+</svg>
