@@ -6,17 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeScreen</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/home.css">
 </head>
 
 <body>
-    <section>
-        <a href="../pages/calculator.html" target="iphone-screen" rel="next">
-            <div class="dock">
-                <img src="../images/calculator-app.jpg" alt="Imagem do ícone do aplicativo da calculadora do Iphone">
+    <!-- HEADER AREA -->
+    <header>
+        <div class="clock" id="hours">clock</div>
+
+        <div class="phone-status">
+            <div class="status">
+                <span class="material-symbols-outlined icon-status">android_cell_4_bar</span>
             </div>
-        </a>
-    </section>
+
+            <div class="status">
+                <span class="material-symbols-outlined icon-status">wifi</span>
+            </div>
+
+            <div class="status">
+                <span class="material-symbols-outlined icon-status">battery_android_6</span>
+            </div>
+        </div>
+    </header>
+    <!-- END HEADER AREA -->
+
+    <!-- MAIN AREA -->
+    <main>
+
+        <!-- DOCK AREA -->
+        <section class="dock">
+            <!-- calculator app -->
+            <a href="../pages/calculator.html" target="iphone-screen" rel="next">
+                <div class="app">
+                    <img src="../images/calculator-app.jpg" alt="Imagem do ícone do aplicativo da calculadora do Iphone">
+                </div>
+            </a>
+
+            <!-- clock app -->
+            <a href="../pages/stopwatch.html" target="iphone-screen" rel="next">
+                <div class="app">
+                    <img src="../images/clock-app.jpg" alt="Imagem do ícone do aplicativo da calculadora do Iphone">
+                </div>
+            </a>
+        </section>
+        <!-- END DOCK AREA -->
+
+    </main>
+    <!-- END MAIN AREA -->
+
+    <script src="../js/home.js"></script>
 </body>
 
 </html>
