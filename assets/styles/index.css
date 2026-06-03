@@ -72,7 +72,7 @@ h1 {
     filter: drop-shadow(1px 8px 10px rgba(0, 0, 0, 0.584));
 }
 
-.iphone-screen {
+.iphone-screen-container {
     position: absolute;
     top: 50.5%;
     left: 49.9%;
@@ -86,7 +86,7 @@ h1 {
     background: black;
 }
 
-#calculator-app {
+#iphone-screen {
     width: 100%;
     height: 100%;
     border-radius: inherit;
