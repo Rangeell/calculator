@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+    appearance: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --white-default: #ffffff;
+    --black-default: #000000;
+    
+    --start-button-background-color: #08300E;
+    --stop-button-background-color: #340E0D;
+    --start-button-color: #5FC27B;
+    --stop-button-color: #FA4745;
+
+    --lap-button-inative-background-color: #1E1D22;
+    --lap-button-active-background-color: #3A3A3A;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: var(--black-default);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.clock,
+.icon-status {
+    font-size: 1rem;
+    color: var(--white-default);
+}
+
+.phone-status {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
