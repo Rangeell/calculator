@@ -121,8 +121,9 @@ button {
     background-color: var(--lap-button-inative-background-color);
 }
 
-.lap-rest-button-active {
+.active {
     background-color: var(--lap-button-active-background-color);
+    color: var(--white-default);
 }
 
 .start-button {
