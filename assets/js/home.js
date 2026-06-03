@@ -1,16 +1,16 @@
 (function myScope() {
 
-    function getTime() {
+    function getTime(clock) {
         const today = new Date()
-        const hour = today.toLocaleTimeString('pt-BR', {
+        const time = today.toLocaleTimeString('pt-BR', {
             timeStyle: 'short'
         })
-        return hour
+        return clock.innerText = `${time}`
     }
 
     function setTime() {
         const clock = document.querySelector('.clock')
-        clock.innerText = getTime()
+        getTime(clock)
     }
     setTime()
     setInterval(setTime, 1000)
