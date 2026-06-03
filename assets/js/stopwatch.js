@@ -8,7 +8,7 @@
         })
         return clock.innerText = time
     }
-
+    
     function setTime() {
         const clock = document.querySelector('.clock')
         getTime(clock)
@@ -16,16 +16,21 @@
     setTime()
     setInterval(setTime, 1000)
 
-    let currentSeconds = 0
-    let currentStopWatch = 0
-
+    // FUNCTION - PADZERO
     function padZero(time) {
         const formartTime = time.toString().padStart('2', 0)
         return formartTime
     }
-    function formatStopWatch(rawSeconds) {
-        const minutes = Math.floor(rawSeconds / 60)
-        return `${minutes}:`
+
+    // FUNCTION FORMAT STOPWATCH
+    function formatStopWatch(rawMiliseconds) {
+        const minutes = padZero(Math.floor(rawMiliseconds / 60000))
+        const seconds = padZero(Math.floor(rawMiliseconds % 60000 / 1000))
+        const miliseconds = padZero(Math.floor(rawMiliseconds % 1000 / 10))
+        return `${minutes}:${seconds}:${miliseconds}`
     }
-    console.log(formatStopWatch(60))
+    console.log(formatStopWatch(72500))
+
+    let currentMiliseconds = 0
+    let currentStopWatch = 0
 })()
