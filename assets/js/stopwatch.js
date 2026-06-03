@@ -18,4 +18,14 @@
 
     let currentSeconds = 0
     let currentStopWatch = 0
+
+    function padZero(time) {
+        const formartTime = time.toString().padStart('2', 0)
+        return formartTime
+    }
+    function formatStopWatch(rawSeconds) {
+        const minutes = Math.floor(rawSeconds / 60)
+        return `${minutes}:`
+    }
+    console.log(formatStopWatch(60))
 })()

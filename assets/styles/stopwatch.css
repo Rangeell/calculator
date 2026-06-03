@@ -140,7 +140,7 @@ hr {
     height: 1px;
     border-radius: 999px;
 
-    background-color: var(--lap-button-inative-color);
+    background-color: var(--dock-background-color);
 }
 
 /* DOCK AREA */
