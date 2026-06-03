@@ -68,7 +68,7 @@ html {
 
 body {
     width: 100%;
-    height: 80dvh;
+    height: 93dvh;
     padding: 10px;
 
     background-color: var(--black_default);
@@ -78,7 +78,7 @@ body {
 }
 
 /* NAV AREA */
-nav {
+header {
     display: flex;
     justify-content: space-between;
 }
@@ -96,12 +96,12 @@ nav {
 }
 
 /* HEADER AREA */
-header {
+nav {
     display: flex;
     justify-content: space-between;
-    
+
     position: relative;
-    
+
     padding-top: 8px;
 }
 
@@ -164,9 +164,9 @@ header {
     width: 75%;
     height: 1px;
     border-radius: 999px;
-    
+
     background-color: var(--white_default);
-    
+
     transition: all .4s ease-in-out;
 }
 
@@ -188,7 +188,7 @@ header {
     flex-flow: row wrap;
     justify-content: center;
     gap: 5px;
-    
+
     position: absolute;
     top: 7%;
     left: 35%;
@@ -197,7 +197,7 @@ header {
     width: 25%;
     padding: 5px;
     border-radius: 10px;
-    
+
     background-color: var(--buttons-utilities);
     backdrop-filter: blur(10px) saturate(160%);
     opacity: 0;
@@ -268,17 +268,23 @@ header {
 
 /* MAIN AREA */
 main {
+    display: grid;
+    grid-template-rows: 1fr 1.7fr 50px;
+    place-items: center;
+    row-gap: 8px;
+
     position: relative;
 
     width: 100%;
     height: 100%;
-    
 
     color: var(--white_default);
 }
 
 /* result */
 .result {
+    place-self: flex-end;
+
     height: 98px;
     margin-top: 30px;
 
@@ -302,41 +308,13 @@ main {
 section.buttons {
     display: grid;
     grid-template: repeat(5, 37px)/repeat(4, 45px);
+
     place-items: center;
-    place-content: center;
-    row-gap: 16px;
-    column-gap: 10px;
-}
+    place-content: space-between space-around;
+    column-gap: 8px;
 
-/* history menu area */
-.history {
-    position: absolute;
-    bottom: 0;
-
-    width: 106%;
-    height: .5%;
-    border-radius: 8px;
-    border: 1.8px solid var(--icons-border-color);
-    
-    
-    background-color: var(--history-background-color);
-    backdrop-filter: blur(2.5px) saturate(180%) brightness(1.2);
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: all .3s cubic-bezier(0.55, 0, 1, 0.45);
-}
-
-.history.history-open {
-    width: 106%;
-    height: 67%;
-
-    opacity: 1;
-    
-    pointer-events: auto;
-
-    transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);
+    width: 100%;
+    height: 100%;
 }
 
 /* buttons area*/
@@ -359,17 +337,17 @@ section.buttons {
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-
-    width: 48px;
+    
+    width: 70px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     border: 1px solid var(--icons-border-color);
-
+    
     color: var(--white_default);
     backdrop-filter: blur(10px);
-
+    
     font-weight: 500;
-   
+    
     transition: all .5s ease;
 }
 
@@ -379,4 +357,57 @@ section.buttons {
     cursor: pointer;
     filter: brightness(1.3) saturate(160%);
     transform: scale(1.1);
+}
+
+/* history menu area */
+.history {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: .5%;
+    border-radius: 8px;
+    border: 1.8px solid var(--icons-border-color);
+
+    background-color: var(--history-background-color);
+    backdrop-filter: blur(2.5px) saturate(180%) brightness(1.2);
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: all .3s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.history.history-open {
+    width: 100%;
+    height: 67%;
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+main a {
+    align-self: end;
+
+    width: 50%;
+    height: 6px;
+    border-radius: 20px;
+
+    background-color: #676767;
+    backdrop-filter: blur(8px) saturate(160%);
+    opacity: 0;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+main a:hover {
+    opacity: 1;
+}
+
+.home-indicator {
+    width: 100%;
+    height: 100%;
 }

@@ -47,18 +47,18 @@ section {
     backdrop-filter: blur(5px) saturate(160%);
 }
 
-.app {
+.dock {
     width: 45px;
     aspect-ratio: 1/1;
     border-radius: 10px;
     transition: all .3s ease-in-out;
 }
 
-section a:hover .app {
+section a:hover .dock {
     transform: scale(1.1);
 }
 
-section a:active .app {
+section a:active .dock {
     filter: brightness(.5);
 
     transform: scale(.90);
