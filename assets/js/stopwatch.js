@@ -8,7 +8,7 @@
         })
         return clock.innerText = time
     }
-    
+
     function setTime() {
         const clock = document.querySelector('.clock')
         getTime(clock)
@@ -23,14 +23,34 @@
     }
 
     // FUNCTION FORMAT STOPWATCH
-    function formatStopWatch(rawMiliseconds) {
+    function getTimeString(rawMiliseconds) {
         const minutes = padZero(Math.floor(rawMiliseconds / 60000))
         const seconds = padZero(Math.floor(rawMiliseconds % 60000 / 1000))
         const miliseconds = padZero(Math.floor(rawMiliseconds % 1000 / 10))
-        return `${minutes}:${seconds}:${miliseconds}`
+        return `${minutes}:${seconds},${miliseconds}`
     }
-    console.log(formatStopWatch(72500))
 
-    let currentMiliseconds = 0
-    let currentStopWatch = 0
+    let miliseconds = 0
+    let currentStopWatch = null
+    const stopwatchSection = document.querySelector('.stopwatch')
+
+    // FUNCTION STOPWATCH
+    const start_Button = document.querySelector('.start-button')
+    start_Button.addEventListener('click', function () {
+        this.classList.toggle('stop-button')
+
+        if (this.classList.contains('stop-button')) {
+            this.innerText = 'stop'
+            
+
+            currentStopWatch = setInterval(function () {
+                miliseconds += 10
+                const stopwatch = getTimeString(miliseconds)
+                stopwatchSection.innerText = stopwatch
+            }, 10)
+        } else {
+            this.innerText = 'start'
+            clearInterval(currentStopWatch)
+        }
+    })
 })()
