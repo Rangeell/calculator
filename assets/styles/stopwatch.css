@@ -19,18 +19,19 @@
 
     --start-button-background-color: #0b4114;
     --start-button-color: #5FC27B;
-    
+
     --stop-button-background-color: #340E0D;
     --stop-button-color: #FA4745;
 
-    
+
     --lap-button-inative-background-color: #1E1D22;
     --lap-button-inative-color: #a5a5a59f;
     --lap-button-active-background-color: #3A3A3A;
 
     --icons-color: #FFA500;
-    --icons-background-color: #a5a5a53d;;
-    
+    --icons-background-color: #a5a5a53d;
+    ;
+
     --dock-background-color: #a5a5a52d;
     --border-color: #ffffff28;
 
@@ -88,7 +89,7 @@ main {
 
 /* STOPWATCH AREA */
 .stopwatch {
-        margin-bottom: 2rem;
+    margin-bottom: 2rem;
 
     font: lighter 4rem var(--stopWatch-font);
     font-variant-numeric: tabular-nums;
@@ -104,6 +105,7 @@ main {
     width: 100%;
 }
 
+/* Buttons area */
 button {
     width: 4rem;
     aspect-ratio: 1/1;
@@ -111,6 +113,7 @@ button {
 
     font: 600 .95rem var(--stopWatch-font);
     background-color: white;
+    cursor: pointer;
 }
 
 .lap-reset-button {
@@ -140,6 +143,7 @@ hr {
     background-color: var(--lap-button-inative-color);
 }
 
+/* DOCK AREA */
 .dock {
     display: flex;
     justify-content: space-evenly;
@@ -154,21 +158,23 @@ hr {
     border: 1px solid var(--border-color);
     border-radius: 25px;
 
-    background-color:var(--dock-background-color) ;
+    background-color: var(--dock-background-color);
     backdrop-filter: blur(5px) saturate(160%);
 }
 
+/* icons area */
 .icon-container {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    
+
     width: 80px;
     height: 93%;
     border-radius: 30px;
 
     background-color: var(--icons-background-color);
+    cursor: pointer;
 }
 
 .icon-container p {

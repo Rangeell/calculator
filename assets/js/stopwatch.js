@@ -5,7 +5,7 @@
         const today = new Date()
         const time = today.toLocaleTimeString('pt-BR', {
             timeStyle: 'short'
-        }) 
+        })
         return clock.innerText = time
     }
 
@@ -15,4 +15,7 @@
     }
     setTime()
     setInterval(setTime, 1000)
+
+    let currentSeconds = 0
+    let currentStopWatch = 0
 })()
