@@ -283,20 +283,19 @@ main {
 
 /* result */
 .result {
-    place-self: flex-end;
+    place-self: end;
 
+    width: 100%;
     height: 98px;
-    margin-top: 30px;
 
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: lighter;
     text-align: right;
 
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    line-height: 2.5;
-
+    /* line-height: 2.5; */
 }
 
 .result::-webkit-scrollbar {
@@ -346,6 +345,7 @@ section.buttons {
     color: var(--white_default);
     backdrop-filter: blur(10px);
     
+    font-size: 1.5rem;
     font-weight: 500;
     
     transition: all .5s ease;

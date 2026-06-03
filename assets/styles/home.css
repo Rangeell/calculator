@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -11,16 +12,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* VARIABLES */
 :root {
     --black-default: #000000;
 
     --border-color: #ffffff28;
 }
 
+/* HTML */
 html {
     font-size: 16px;
 }
 
+/* BODY AREA */
 body {
     display: flex;
     justify-content: center;
@@ -32,6 +36,7 @@ body {
     background: var(--black-default) url(../images/home-screen.jpg) no-repeat fixed center /cover
 }
 
+/* SECTION - INITIAL PAGE AREA */
 section {
     display: flex;
     justify-content: space-evenly;
@@ -47,6 +52,7 @@ section {
     backdrop-filter: blur(5px) saturate(160%);
 }
 
+/* DOCK AREA */
 .dock {
     width: 45px;
     aspect-ratio: 1/1;
@@ -65,6 +71,7 @@ section a:active .dock {
     transition: .2s ease;
 }
 
+/* apps area */
 img {
     width: 100%;
     aspect-ratio: 1/1;
