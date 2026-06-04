@@ -51,6 +51,8 @@ body {
 
     width: 100%;
     height: 98dvh;
+    padding: 5px;
+
     color: var(--white-default);
     background-color: var(--black-default);
 }
@@ -205,11 +207,16 @@ a {
     background-color: #676767;
     backdrop-filter: blur(8px) saturate(160%);
     opacity: 0;
-    transition: all .3s ease;
+    transition: opacity .3s ease-in-out;
     cursor: pointer;
 
-    &:hover {
+    &:is(:hover, :focus-visible) {
         opacity: 1;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--white-default);
+        outline-offset: 1px;
     }
 }
 

@@ -35,9 +35,10 @@
     const stopwatchSection = document.querySelector('.stopwatch')
 
     const button_LepReset = document.querySelector('.lap-reset-button')
+
     // FUNCTION STOPWATCH
     const button_Start = document.querySelector('.start-button')
-    button_Start.addEventListener('click', function () {
+    button_Start.addEventListener('click', function start() {
         this.classList.toggle('stop-button')
 
         if (this.classList.contains('stop-button')) {
@@ -54,6 +55,12 @@
             this.innerText = 'Start'
             button_LepReset.innerText = 'Reset'
             clearInterval(currentStopWatch)
+        }
+    })
+
+    button_Start.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            start()
         }
     })
 
