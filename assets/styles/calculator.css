@@ -336,18 +336,18 @@ section.buttons {
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    
+
     width: 70px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     border: 1px solid var(--icons-border-color);
-    
+
     color: var(--white_default);
     backdrop-filter: blur(10px);
-    
+
     font-size: 1.5rem;
     font-weight: 500;
-    
+
     transition: all .5s ease;
 }
 
@@ -389,7 +389,7 @@ section.buttons {
     transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-main a {
+a {
     align-self: end;
 
     width: 50%;
@@ -403,7 +403,7 @@ main a {
     cursor: pointer;
 }
 
-main a:hover {
+a:hover {
     opacity: 1;
 }
 

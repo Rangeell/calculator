@@ -46,7 +46,7 @@ html {
 /* BODY AREA */
 body {
     display: grid;
-    grid-template-rows: 50px 1fr .5fr 50px;
+    grid-template-rows: 50px 1fr .5fr 50px 8px;
     align-items: center;
 
     width: 100%;
@@ -151,7 +151,7 @@ hr {
     align-items: center;
     place-self: center;
 
-    grid-area: -2/1 / -1/1;
+    grid-area: -3/1 / -2/1;
 
     width: 95%;
     height: 45px;
@@ -191,4 +191,29 @@ img {
     aspect-ratio: 1/1;
     object-fit: contain;
     filter: brightness(1.1);
+}
+
+a {
+    grid-area: -2/1 / -1/1;
+    align-self: end;
+    justify-self: center;
+
+    width: 50%;
+    height: 6px;
+    border-radius: 20px;
+
+    background-color: #676767;
+    backdrop-filter: blur(8px) saturate(160%);
+    opacity: 0;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.home-indicator {
+    width: 100%;
+    height: 100%;
 }

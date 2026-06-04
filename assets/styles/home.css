@@ -43,7 +43,7 @@ header {
     justify-content: space-between;
 
     padding: 10px;
- 
+
     background-color: transparent;
     color: white;
 }
@@ -89,7 +89,7 @@ main {
     width: 45px;
     aspect-ratio: 1/1;
     border-radius: 10px;
- 
+
     transition: all .3s ease-in-out;
 }
 
