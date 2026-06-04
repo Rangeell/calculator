@@ -74,12 +74,12 @@ h1 {
 
 .iphone-screen-container {
     position: absolute;
-    top: 50.5%;
-    left: 49.9%;
+    top: 50.6%;
+    left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 83.7%;
-    height: 97.7%;
+    width: 83.8%;
+    height: 97.8%;
     border-radius: 28px;
     padding: 2px;
 

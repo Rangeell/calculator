@@ -41,7 +41,7 @@
         this.classList.toggle('stop-button')
 
         if (this.classList.contains('stop-button')) {
-            this.innerText = 'stop'
+            this.innerText = 'Stop'
             button_LepReset.classList.add('active')
             button_LepReset.innerText = 'Lap'
 
@@ -51,7 +51,7 @@
                 stopwatchSection.innerText = stopwatch
             }, 10)
         } else {
-            this.innerText = 'start'
+            this.innerText = 'Start'
             button_LepReset.innerText = 'Reset'
             clearInterval(currentStopWatch)
         }
@@ -63,6 +63,11 @@
             clearInterval(currentStopWatch)
             miliseconds = 0
             stopwatchSection.innerText = '00:00,00'
+        }
+
+        if (stopwatchSection.innerText === '00:00,00') {
+            this.classList.remove('active')
+            this.innerText = 'Lap'
         }
     })
 })()
