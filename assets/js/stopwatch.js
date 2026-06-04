@@ -38,11 +38,12 @@
 
     // FUNCTION STOPWATCH
     const button_Start = document.querySelector('.start-button')
-    button_Start.addEventListener('click', function start() {
-        this.classList.toggle('stop-button')
+    button_Start.addEventListener('click', start)
+    function start() {
+        button_Start.classList.toggle('stop-button')
 
-        if (this.classList.contains('stop-button')) {
-            this.innerText = 'Stop'
+        if (button_Start.classList.contains('stop-button')) {
+            button_Start.innerText = 'Stop'
             button_LepReset.classList.add('active')
             button_LepReset.innerText = 'Lap'
 
@@ -52,13 +53,13 @@
                 stopwatchSection.innerText = stopwatch
             }, 10)
         } else {
-            this.innerText = 'Start'
+            button_Start.innerText = 'Start'
             button_LepReset.innerText = 'Reset'
             clearInterval(currentStopWatch)
         }
-    })
+    }
 
-    button_Start.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             start()
         }
