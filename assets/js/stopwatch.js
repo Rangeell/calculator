@@ -22,7 +22,7 @@
         return formartTime
     }
 
-    // FUNCTION FORMAT STOPWATCH
+    // FUNCTION - FORMAT STOPWATCH
     function getTimeString(rawMiliseconds) {
         const minutes = padZero(Math.floor(rawMiliseconds / 60000))
         const seconds = padZero(Math.floor(rawMiliseconds % 60000 / 1000))
@@ -36,7 +36,7 @@
 
     const button_LepReset = document.querySelector('.lap-reset-button')
 
-    // FUNCTION STOPWATCH
+    // FUNCTION - START STOPWATCH
     const button_Start = document.querySelector('.start-button')
     button_Start.addEventListener('click', start)
     function start() {
@@ -65,7 +65,7 @@
         }
     })
 
-    // FUNCTION RESET
+    // FUNCTION - RESET STOPWATCH
     button_LepReset.addEventListener('click', function () {
         if (this.innerText === 'Reset') {
             clearInterval(currentStopWatch)
