@@ -61,13 +61,14 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    
     padding: 10px;
 }
 
 /* Phone status area */
 .clock,
 .icon-status {
-    font-size: 1rem;
+    font-size: .95rem;
     color: var(--white-default);
 }
 
