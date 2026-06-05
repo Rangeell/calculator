@@ -75,22 +75,39 @@
             stopwatchSection.innerText = '00:00,00'
         }
 
+        if (this.innerText === 'Lap') {
+            
+        }
+
         if (stopwatchSection.innerText === '00:00,00') {
             this.classList.remove('active')
             this.innerText = 'Lap'
         }
     })
 
-    function createLiLap() {
-        const liLap = document.createElement('li')
-        liLap.setAttribute('class', 'lap-number')
-        return liLap
-    }
-    
-    function createLiTime() {
-        const liTime = document.createElement('li')
-        liTime.setAttribute('class', 'lap-number')
-        return liTime
+    function createUlLap() {
+        const ulLap = document.createElement('ul')
+        ulLap.setAttribute('class', 'lap-number')
+        return ulLap
     }
 
+    function createLiLap() {
+        const liLap = document.createElement('li')
+        const ulLap = createUlLap()
+        ulLap.append(liLap)
+        return ulLap
+    }
+
+    function createUlTime() {
+        const ulTime = document.createElement('ul')
+        ulTime.setAttribute('class', 'lap-time')
+        return ulTime
+    }
+
+    function createLiTime() {
+        const liTime = document.createElement('ul')
+        const ulTime = createUlTime()
+        ulTime.append(liTime)
+        return ulTime
+    }
 })()
