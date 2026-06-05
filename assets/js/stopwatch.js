@@ -122,8 +122,15 @@
         const liTime = document.createElement('li')
         const ulTime = createUlTime()
 
-        liTime.innerText = '00:00,00'
-        ulTime.append(liTime)
+        if (laps.length === 1) {
+            liTime.innerText = getTimeString(miliseconds)
+            ulTime.append(liTime)
+        } else {
+            let curretLap = laps[laps.length - 1] - laps[laps.length - 2]
+
+            liTime.innerText = getTimeString(curretLap)
+            ulTime.append(liTime)
+        }
 
         return ulTime
     }
@@ -145,7 +152,7 @@
         lapElements.forEach(function (e) {
             e.remove()
         })
-        miliseconds = 0 
+        miliseconds = 0
         laps = []
     }
 })()
