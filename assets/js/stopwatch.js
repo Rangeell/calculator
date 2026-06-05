@@ -15,7 +15,8 @@
     }
     setTime()
     setInterval(setTime, 1000)
-
+    
+    // STOPWATCH SECTION
     // FUNCTION - PADZERO
     function padZero(time) {
         const formartTime = time.toString().padStart('2', 0)
@@ -31,10 +32,16 @@
     }
 
     let miliseconds = 0
-    let currentStopWatch = null
+    let stopwatch = null
     const stopwatchSection = document.querySelector('.stopwatch')
-
     const button_LepReset = document.querySelector('.lap-reset-button')
+
+    function stopwatchInterval() {
+        stopwatch = setInterval(function () {
+            miliseconds += 10
+            stopwatchSection.innerText = getTimeString(miliseconds)
+        }, 10)
+    }
 
     // FUNCTION - START STOPWATCH
     const button_Start = document.querySelector('.start-button')
@@ -46,16 +53,12 @@
             button_Start.innerText = 'Stop'
             button_LepReset.classList.add('active')
             button_LepReset.innerText = 'Lap'
+            stopwatchInterval()
 
-            currentStopWatch = setInterval(function () {
-                miliseconds += 10
-                const stopwatch = getTimeString(miliseconds)
-                stopwatchSection.innerText = stopwatch
-            }, 10)
         } else {
             button_Start.innerText = 'Start'
             button_LepReset.innerText = 'Reset'
-            clearInterval(currentStopWatch)
+            clearInterval(stopwatch)
         }
     }
 
@@ -68,7 +71,7 @@
     // FUNCTION - RESET STOPWATCH
     button_LepReset.addEventListener('click', function () {
         if (this.innerText === 'Reset') {
-            clearInterval(currentStopWatch)
+            clearInterval(stopwatch)
             miliseconds = 0
             stopwatchSection.innerText = '00:00,00'
         }
