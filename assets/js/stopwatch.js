@@ -68,7 +68,7 @@
         if (event.key === 'Enter') return start()
     })
 
-    // FUNCTION - RESET STOPWATCH
+    // FUNCTION - RESET/LAP STOPWATCH
     button_LepReset.addEventListener('click', function () {
         const isRunning = button_Start.classList.contains('stop-button')
 
@@ -94,6 +94,7 @@
         }
     })
 
+    // SPECIALIST FUNCTIONS
     function createHr() {
         const hr = document.createElement('hr')
         return hr
@@ -115,6 +116,7 @@
 
     function createUlTime() {
         const ulTime = document.createElement('ul')
+        
         ulTime.setAttribute('class', 'lap-time')
         return ulTime
     }
@@ -122,8 +124,10 @@
     function createLiTime() {
         const liTime = document.createElement('li')
         const ulTime = createUlTime()
-        liTime.innerText = '00:00,00'
+        
+        liTime.innerText = getTimeString(miliseconds)
         ulTime.append(liTime)
+        
         return ulTime
     }
 
