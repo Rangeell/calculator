@@ -140,7 +140,6 @@ button {
     border-radius: 50%;
 
     font: 600 .95rem var(--stopWatch-font);
-    background-color: white;
     cursor: pointer;
 }
 
