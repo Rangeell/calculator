@@ -70,20 +70,19 @@
 
     // FUNCTION - RESET STOPWATCH
     button_LepReset.addEventListener('click', function () {
-
         const isRunning = button_Start.classList.contains('stop-button')
+
         if (this.innerText === 'Lap' && isRunning) {
-            const lapSection = createSectionLap()
-            const hr = document.createElement('hr')
-            lapSection.append(createLiLap(), createLiTime())
-            lapsList.append(lapSection, hr)
+            setLapSection()
         }
 
         if (this.innerText === 'Reset') {
             clearInterval(stopwatch)
             miliseconds = 0
             stopwatchSection.innerText = '00:00,00'
+
             const laps = lapsList.querySelectorAll('.laps, hr')
+
             laps.forEach(function (e) {
                 e.remove()
             })
@@ -95,10 +94,9 @@
         }
     })
 
-    function createSectionLap() {
-        const lapSection = document.createElement('section')
-        lapSection.setAttribute('class', 'laps')
-        return lapSection
+    function createHr() {
+        const hr = document.createElement('hr')
+        return hr
     }
 
     function createUlLap() {
@@ -127,6 +125,18 @@
         liTime.innerText = '00:00,00'
         ulTime.append(liTime)
         return ulTime
+    }
+
+    function createLapSection() {
+        const lapSection = document.createElement('section')
+        lapSection.setAttribute('class', 'laps')
+        lapSection.append(createLiLap(), createLiTime())
+        return lapSection
+    }
+
+    function setLapSection() {
+        const hr = createHr()
+        return lapsList.append(createLapSection(), hr)
     }
 
 })()
