@@ -147,6 +147,10 @@ button {
 .lap-reset-button {
     color: var(--lap-button-inative-color);
     background-color: var(--lap-button-inative-background-color);
+
+    &:active {
+        background-color: var(--lap-button-inative-background-color);
+    }
 }
 
 .active {
