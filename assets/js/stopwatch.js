@@ -33,7 +33,7 @@
 
     let miliseconds = 0
     let stopwatch = null
-    const main = document.querySelector('main')
+    const lapsList = document.querySelector('.laps-list')
     const stopwatchSection = document.querySelector('.stopwatch')
     const button_LepReset = document.querySelector('.lap-reset-button')
 
@@ -70,32 +70,32 @@
 
     // FUNCTION - RESET STOPWATCH
     button_LepReset.addEventListener('click', function () {
-        
+
         const isRunning = button_Start.classList.contains('stop-button')
         if (this.innerText === 'Lap' && isRunning) {
             const lapSection = createSectionLap()
             const hr = document.createElement('hr')
             lapSection.append(createLiLap(), createLiTime())
-            main.append(lapSection, hr)
+            lapsList.append(lapSection, hr)
         }
-        
+
         if (this.innerText === 'Reset') {
             clearInterval(stopwatch)
             miliseconds = 0
             stopwatchSection.innerText = '00:00,00'
-            const laps = main.querySelectorAll('.laps, hr')
-            laps.forEach( function (e) {
+            const laps = lapsList.querySelectorAll('.laps, hr')
+            laps.forEach(function (e) {
                 e.remove()
-            }) 
+            })
         }
-        
+
         if (stopwatchSection.innerText === '00:00,00') {
             this.classList.remove('active')
             this.innerText = 'Lap'
         }
     })
 
-    function createSectionLap () {
+    function createSectionLap() {
         const lapSection = document.createElement('section')
         lapSection.setAttribute('class', 'laps')
         return lapSection
@@ -129,7 +129,4 @@
         return ulTime
     }
 
-    function clearUl(ulLap, ulTime) {
-        main.remove(ulLap, ulTime)
-    }
 })()

@@ -36,46 +36,54 @@
 
     <!-- MAIN AREA -->
     <main>
-
         <!-- Stopwatch area -->
-        <section class="stopwatch">
-            00:00,00
-        </section>
-        <section class="controls">
-            <button class="lap-reset-button">Lap</button>
-            <button class="start-button">Start</button>
+        <section class="stopwatch-container">
+            <div class="stopwatch">
+                00:00,00
+            </div>
+            <div class="controls">
+                <button class="lap-reset-button">Lap</button>
+                <button class="start-button">Start</button>
+            </div>
         </section>
         <hr>
-        <!-- end stopwatch area -->
+        <!-- End stopwatch area -->
 
         <!-- Laps area -->
-        <section class="laps">
-            <ul class="lap-number">
-                <li>Lap 1</li>
-            </ul>
-            <ul class="lap-time">
-                <li>00:00,00</li>
-            </ul>
-        </section>
-        <hr>
-        <!-- End laps area -->
+        <section class="laps-list">
+            <section class="laps">
+                <ul class="lap-number">
+                    <li>Lap 1</li>
+                </ul>
+                <ul class="lap-time">
+                    <li>00:00,00</li>
+                </ul>
+                <section>
+            </section>
+            <!-- End laps area -->
     </main>
     <!-- END MAIN AREA -->
 
-    <!-- DOCK AREA -->
-    <section class="dock">
-        <div class="icon-container">
-            <img src="../svg/stopwatch.svg" alt="Imagem de cronômetro laranja">
-            <p>Stopwatch</p>
-        </div>
-    </section>
-    <!-- END DOCK AREA -->
-
-    <!-- home-indicator -->
-    <a href="home.html" target="iphone-screen">
-        <section class="home-indicator ">
+    <!-- FOOTER AREA -->
+    <footer>
+        <!-- dock area -->
+        <section class="dock">
+            <div class="icon-container">
+                <img src="../svg/stopwatch.svg" alt="Imagem de cronômetro laranja">
+                <p>Stopwatch</p>
+            </div>
         </section>
-    </a>
+        <!-- End dock area -->
+
+        <!-- Home-indicator area -->
+        <a href="home.html" target="iphone-screen">
+            <section class="home-indicator ">
+            </section>
+        </a>
+        <!-- End home=incator area -->
+    </footer>
+
+    <!-- END FOOTER AREA -->
 
     <script src="../js/stopwatch.js"></script>
 </body>
