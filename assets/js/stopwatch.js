@@ -1,3 +1,13 @@
+/*
+    1. Adicionar uma função que abrace toda a lógica do stopwatch
+    2. Adicionar a funcinalidade do click no backspace para ativar o reset/lap button
+    3. Ver se nenhuma função pode ser refatorada para encurtar o código;
+        1. Talvez adicionar mais alguma função especialista
+        2. Talvez adicionar uma função dentro da outra (funções que retornam outras funções)  
+    4. Analisar a possibilidade de substituir as listas por spans ou uma única ul com vários li para simplificar o código
+    5. Estudar a possibilidade de substituir a "function getTimeString(rawMiliseconds)" pelo objeto Date() e editar a string mesmo assim.
+*/
+
 (function myScope() {
 
     // FUNCTION GET & SET TIME ON CLOCK
@@ -131,7 +141,6 @@
             liTime.innerText = getTimeString(curretLap)
             ulTime.append(liTime)
         }
-
         return ulTime
     }
 
