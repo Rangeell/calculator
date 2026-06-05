@@ -80,4 +80,10 @@
             this.innerText = 'Lap'
         }
     })
+
+    function createLiLap() {
+        const liLap = document.createElement('li')
+        liLap.setAttribute('class', 'lap-number')
+        return liLap
+    }
 })()
