@@ -15,7 +15,7 @@
     }
     setTime()
     setInterval(setTime, 1000)
-    
+
     // STOPWATCH SECTION
     // FUNCTION - PADZERO
     function padZero(time) {
@@ -63,9 +63,7 @@
     }
 
     document.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            start()
-        }
+        if (event.key === 'Enter') return start()
     })
 
     // FUNCTION - RESET STOPWATCH
