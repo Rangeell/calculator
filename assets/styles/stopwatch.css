@@ -9,6 +9,8 @@
     text-decoration: none;
     user-select: none;
     appearance: none;
+    list-style-position: inside;
+    list-style: none;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -98,7 +100,7 @@ main {
     font-variant-numeric: tabular-nums;
 }
 
-/* CONTROLS AREA */
+/* SECTION - CONTROLS AREA */
 .controls {
     display: flex;
     flex-flow: row nowrap;
@@ -139,12 +141,25 @@ button {
     background-color: var(--stop-button-background-color);
 }
 
+/* Lap area */
 hr {
-    width: 95%;
+    width: 100%;
     height: 1px;
     border-radius: 999px;
 
     background-color: var(--dock-background-color);
+}
+
+.laps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+.lap-number {
+    flex: 1 1 auto;
 }
 
 /* DOCK AREA */
