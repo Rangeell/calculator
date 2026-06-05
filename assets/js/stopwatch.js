@@ -33,6 +33,7 @@
 
     let miliseconds = 0
     let stopwatch = null
+    let laps = []
     const lapsList = document.querySelector('.laps-list')
     const stopwatchSection = document.querySelector('.stopwatch')
     const button_LepReset = document.querySelector('.lap-reset-button')
@@ -73,19 +74,14 @@
         const isRunning = button_Start.classList.contains('stop-button')
 
         if (this.innerText === 'Lap' && isRunning) {
+            laps.push(miliseconds)
             setLapSection()
         }
 
         if (this.innerText === 'Reset') {
             clearInterval(stopwatch)
-            miliseconds = 0
+            clearLapSection()
             stopwatchSection.innerText = '00:00,00'
-
-            const laps = lapsList.querySelectorAll('.laps, hr')
-
-            laps.forEach(function (e) {
-                e.remove()
-            })
         }
 
         if (stopwatchSection.innerText === '00:00,00') {
@@ -108,7 +104,8 @@
 
     function createLiLap() {
         const liLap = document.createElement('li')
-        liLap.innerText = 'Teste 1'
+
+        liLap.innerText = `Lap ${laps.length}`
         const ulLap = createUlLap()
         ulLap.append(liLap)
         return ulLap
@@ -116,7 +113,7 @@
 
     function createUlTime() {
         const ulTime = document.createElement('ul')
-        
+
         ulTime.setAttribute('class', 'lap-time')
         return ulTime
     }
@@ -124,10 +121,10 @@
     function createLiTime() {
         const liTime = document.createElement('li')
         const ulTime = createUlTime()
-        
-        liTime.innerText = getTimeString(miliseconds)
+
+        liTime.innerText = '00:00,00'
         ulTime.append(liTime)
-        
+
         return ulTime
     }
 
@@ -143,4 +140,12 @@
         return lapsList.append(createLapSection(), hr)
     }
 
+    function clearLapSection() {
+        const lapElements = lapsList.querySelectorAll('.laps, hr')
+        lapElements.forEach(function (e) {
+            e.remove()
+        })
+        miliseconds = 0 
+        laps = []
+    }
 })()
