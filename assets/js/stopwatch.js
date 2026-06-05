@@ -33,6 +33,7 @@
 
     let miliseconds = 0
     let stopwatch = null
+    const main = document.querySelector('main')
     const stopwatchSection = document.querySelector('.stopwatch')
     const button_LepReset = document.querySelector('.lap-reset-button')
 
@@ -69,21 +70,36 @@
 
     // FUNCTION - RESET STOPWATCH
     button_LepReset.addEventListener('click', function () {
+        
+        const isRunning = button_Start.classList.contains('stop-button')
+        if (this.innerText === 'Lap' && isRunning) {
+            const lapSection = createSectionLap()
+            const hr = document.createElement('hr')
+            lapSection.append(createLiLap(), createLiTime())
+            main.append(lapSection, hr)
+        }
+        
         if (this.innerText === 'Reset') {
             clearInterval(stopwatch)
             miliseconds = 0
             stopwatchSection.innerText = '00:00,00'
+            const laps = main.querySelectorAll('.laps, hr')
+            laps.forEach( function (e) {
+                e.remove()
+            }) 
         }
-
-        if (this.innerText === 'Lap') {
-            
-        }
-
+        
         if (stopwatchSection.innerText === '00:00,00') {
             this.classList.remove('active')
             this.innerText = 'Lap'
         }
     })
+
+    function createSectionLap () {
+        const lapSection = document.createElement('section')
+        lapSection.setAttribute('class', 'laps')
+        return lapSection
+    }
 
     function createUlLap() {
         const ulLap = document.createElement('ul')
@@ -93,6 +109,7 @@
 
     function createLiLap() {
         const liLap = document.createElement('li')
+        liLap.innerText = 'Teste 1'
         const ulLap = createUlLap()
         ulLap.append(liLap)
         return ulLap
@@ -105,9 +122,14 @@
     }
 
     function createLiTime() {
-        const liTime = document.createElement('ul')
+        const liTime = document.createElement('li')
         const ulTime = createUlTime()
+        liTime.innerText = '00:00,00'
         ulTime.append(liTime)
         return ulTime
+    }
+
+    function clearUl(ulLap, ulTime) {
+        main.remove(ulLap, ulTime)
     }
 })()
