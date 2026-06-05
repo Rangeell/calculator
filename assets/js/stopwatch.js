@@ -86,4 +86,11 @@
         liLap.setAttribute('class', 'lap-number')
         return liLap
     }
+    
+    function createLiTime() {
+        const liTime = document.createElement('li')
+        liTime.setAttribute('class', 'lap-number')
+        return liTime
+    }
+
 })()
