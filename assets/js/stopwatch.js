@@ -49,7 +49,8 @@
     function start() {
         button_Start.classList.toggle('stop-button')
 
-        if (button_Start.classList.contains('stop-button')) {
+        const isRunning = button_Start.classList.contains('stop-button')
+        if (isRunning) {
             button_Start.innerText = 'Stop'
             button_LepReset.classList.add('active')
             button_LepReset.innerText = 'Lap'
