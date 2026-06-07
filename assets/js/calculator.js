@@ -41,24 +41,45 @@
     // CALCULATOR AREA
     function Calculator() {
         this.res = document.querySelector('.result')
+        this.equal = document.querySelector('#equal')
 
         this.start = () => {
             this.clickButtons()
+            this.pressEnter()
         }
 
         this.clickButtons = () => {
             document.addEventListener('click', (e) => {
                 const el = e.target
+                if (el.id === 'ac') this.ac()
+                if (el.id === 'equal') this.calculate()
+                if (el.id === 'backspace') this.backspace()
                 if (el.classList.contains('buttons-numbers')) this.addNumber(el.innerText)
                 if (el.classList.contains('buttons-operators')) this.addOperator(el.innerText)
-                if (el.id === 'ac') this.ac()
-                if (el.id === 'backspace') this.backspace()
             })
+        }
+
+        this.pressEnter = () => {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault()
+                    this.equal.focus()
+                    this.calculate()
+                }
+            })
+        }
+
+        this.calculate = () => {
+            const result = eval(this.res.innerText)
+            this.res.innerText = result
         }
 
         this.addNumber = (value) => {
             if (this.res.innerText === '0') this.res.innerText = value
-            else this.res.innerText += value
+            else {
+                this.res.innerText += value
+                this.res.scrollLeft = this.res.scrollWidth
+            }
         }
 
         this.addOperator = (value) => {
@@ -69,12 +90,14 @@
             if (operators.includes(lastCharacter)) {
                 this.res.innerText = this.res.innerText.slice(0, -1) + value
             }
-            else this.res.innerText += value
+            else {
+                this.res.innerText += value
+                this.res.scrollLeft = this.res.scrollWidth
+            }
+
         }
 
-        this.ac = () => {
-            this.res.innerText = '0'
-        }
+        this.ac = () => this.res.innerText = '0'
 
         this.backspace = () => {
             this.res.innerText = this.res.innerText.slice(0, -1)
