@@ -39,7 +39,6 @@
     */
 
     // CALCULATOR AREA
-
     function Calculator() {
         this.res = document.querySelector('.result')
 
@@ -53,7 +52,7 @@
                 if (el.classList.contains('buttons-numbers')) this.addNumber(el.innerText)
                 if (el.classList.contains('buttons-operators')) this.addOperator(el.innerText)
                 if (el.id === 'ac') this.ac()
-                if (el.classList.contains('backspace')) this.backspace()
+                if (el.id === 'backspace') this.backspace()
             })
         }
 
@@ -64,10 +63,10 @@
 
         this.addOperator = (value) => {
             const operators = ['/', '+', '-', 'x']
-            let lastCaracter = this.res.innerText.slice(-1)
+            let lastCharacter = this.res.innerText.slice(-1)
 
-            if (this.res.innerText === '0') return
-            if (operators.includes(lastCaracter)) {
+            if (this.res.innerText === '0' || value === '=') return
+            if (operators.includes(lastCharacter)) {
                 this.res.innerText = this.res.innerText.slice(0, -1) + value
             }
             else this.res.innerText += value

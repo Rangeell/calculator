@@ -318,6 +318,11 @@ section.buttons {
 }
 
 /* buttons area*/
+
+button span {
+    pointer-events: none;
+}
+
 .buttons-utilities {
     background-color: var(--buttons-utilities);
 }
