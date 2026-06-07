@@ -51,6 +51,7 @@
             document.addEventListener('click', (e) => {
                 const el = e.target
                 if (el.classList.contains('buttons-numbers')) this.addNumber(el.innerText)
+                if (el.classList.contains('buttons-operators')) this.addOperator(el.innerText)
                 if (el.id === 'ac') this.ac()
                 if (el.classList.contains('backspace')) this.backspace()
             })
@@ -58,6 +59,17 @@
 
         this.addNumber = (value) => {
             if (this.res.innerText === '0') this.res.innerText = value
+            else this.res.innerText += value
+        }
+
+        this.addOperator = (value) => {
+            const operators = ['/', '+', '-', 'x']
+            let lastCaracter = this.res.innerText.slice(-1)
+
+            if (this.res.innerText === '0') return
+            if (operators.includes(lastCaracter)) {
+                this.res.innerText = this.res.innerText.slice(0, -1) + value
+            }
             else this.res.innerText += value
         }
 

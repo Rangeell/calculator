@@ -291,6 +291,7 @@ main {
     font-size: 4rem;
     font-weight: lighter;
     text-align: right;
+    letter-spacing: 3px;
 
     overflow-x: auto;
     overflow-y: hidden;
