@@ -39,73 +39,106 @@
     */
 
     // CALCULATOR AREA
-    const res = document.querySelector('.result')
 
-    const button_Calculator = {
-        numbers: document.querySelectorAll('.buttons-numbers'),
-        utilities: document.querySelectorAll('.buttons-utilities'),
-        operators: document.querySelectorAll('.buttons-operators')
+    function Calculator() {
+        this.res = document.querySelector('.result')
+
+        this.start = () => {
+            this.clickButtons()
+        }
+
+        this.clickButtons = () => {
+            document.addEventListener('click', (e) => {
+                const el = e.target
+                if (el.classList.contains('buttons-numbers')) this.addNumber(el.innerText)
+                if (el.id === 'ac') this.ac()
+                if (el.classList.contains('backspace')) this.backspace()
+            })
+        }
+
+        this.addNumber = (value) => {
+            if (this.res.innerText === '0') this.res.innerText = value
+            else this.res.innerText += value
+        }
+
+        this.ac = () => {
+            this.res.innerText = '0'
+        }
+
+        this.backspace() = () => {
+            this.res.innerText = this.res.innerText.slice(0, -1)
+        }
     }
+    const calculator = new Calculator()
+    calculator.start()
 
-    // function add number
-    button_Calculator.numbers.forEach(function (button) {
-        button.addEventListener('click', function () {
-            if (res.innerText === '0') {
-                res.innerText = button.textContent
-            } else {
-                res.innerText += button.textContent
-                res.scrollLeft = res.scrollWidth
-            }
-        })
-    })
-
-    // function backspace & AC
-    button_Calculator.utilities.forEach(function (button) {
-        button.addEventListener('click', function () {
-            switch (button.innerText) {
-                case 'backspace':
-                    res.innerText = res.innerText.slice(0, -1)
-                    if (res.innerText === '') {
-                        res.innerText = '0'
-                    }
-                    break
-
-                case 'AC':
-                    res.innerText = '0'
-                    break
-            }
-        })
-    })
-
-    // function calculate
-    button_Calculator.operators.forEach(function (button) {
-        button.addEventListener('click', function () {
-            const comando = button.innerText
-            let expressao = res.innerText
-            let ultimoCaractere = expressao.slice(-1)
-            let operadores = ['+', '-', 'x', '/']
-
-            if (comando !== '=') {
-                if (operadores.includes(ultimoCaractere) && operadores.includes(comando)) {
-                    res.innerText = expressao.slice(0, -1) + comando
-                    res.scrollLeft = res.scrollWidth
+    /*    const res = document.querySelector('.result')
+    
+        const button_Calculator = {
+            numbers: document.querySelectorAll('.buttons-numbers'),
+            utilities: document.querySelectorAll('.buttons-utilities'),
+            operators: document.querySelectorAll('.buttons-operators')
+        }
+    
+        // function add number
+        button_Calculator.numbers.forEach(function (button) {
+            button.addEventListener('click', function () {
+                if (res.innerText === '0') {
+                    res.innerText = button.textContent
                 } else {
-                    res.innerText += comando
+                    res.innerText += button.textContent
                     res.scrollLeft = res.scrollWidth
                 }
-            } else {
-                if (expressao.indexOf('+') !== - 1) {
-                    let partes = expressao.split('+')
-                    let sum = 0
-                    for (let v of partes) {
-                        sum += Number(v)
-                    }
-                    res.innerText = sum
-                }
-            }
+            })
         })
-    })
-
+    
+        // function backspace & AC
+        button_Calculator.utilities.forEach(function (button) {
+            button.addEventListener('click', function () {
+                switch (button.innerText) {
+                    case 'backspace':
+                        res.innerText = res.innerText.slice(0, -1)
+                        if (res.innerText === '') {
+                            res.innerText = '0'
+                        }
+                        break
+    
+                    case 'AC':
+                        res.innerText = '0'
+                        break
+                }
+            })
+        })
+    
+        // function calculate
+        button_Calculator.operators.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const comando = button.innerText
+                let expressao = res.innerText
+                let ultimoCaractere = expressao.slice(-1)
+                let operadores = ['+', '-', 'x', '/']
+    
+                if (comando !== '=') {
+                    if (operadores.includes(ultimoCaractere) && operadores.includes(comando)) {
+                        res.innerText = expressao.slice(0, -1) + comando
+                        res.scrollLeft = res.scrollWidth
+                    } else {
+                        res.innerText += comando
+                        res.scrollLeft = res.scrollWidth
+                    }
+                } else {
+                    if (expressao.indexOf('+') !== - 1) {
+                        let partes = expressao.split('+')
+                        let sum = 0
+                        for (let v of partes) {
+                            sum += Number(v)
+                        }
+                        res.innerText = sum
+                    }
+                }
+            })
+        })
+    */
     // THEMES AREA
     const body = document.body
 
