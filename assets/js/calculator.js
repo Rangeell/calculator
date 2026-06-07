@@ -65,8 +65,9 @@
             this.res.innerText = '0'
         }
 
-        this.backspace() = () => {
+        this.backspace = () => {
             this.res.innerText = this.res.innerText.slice(0, -1)
+            if (this.res.innerText === '') this.res.innerText = '0'
         }
     }
     const calculator = new Calculator()
