@@ -85,7 +85,7 @@ header {
 
 .clock,
 .icon-status {
-    font-size: clamp(0.65rem, 1.2vw, 0.95rem);
+    font-size: .8rem;
 }
 
 .phone-status {
@@ -124,8 +124,8 @@ nav {
     justify-content: center;
     align-items: center;
 
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 1.9rem;
+    aspect-ratio: 1/1;
     padding: clamp(5px, 0.8vw, 7px);
     border-radius: 50%;
     border: 1px solid var(--icons-border-color);

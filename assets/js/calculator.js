@@ -42,6 +42,7 @@
     function Calculator() {
         this.res = document.querySelector('.result')
         this.equal = document.querySelector('#equal')
+        this.backspace = document.querySelector('#backspace')
 
         this.start = () => {
             this.clickButtons()
@@ -53,7 +54,7 @@
                 const el = e.target
                 if (el.id === 'ac') this.ac()
                 if (el.id === 'equal') this.calculate()
-                if (el.id === 'backspace') this.backspace()
+                if (el.id === 'backspace') this.deleteOne()
                 if (el.classList.contains('buttons-numbers')) this.addNumber(el.innerText)
                 if (el.classList.contains('buttons-operators')) this.addOperator(el.innerText)
             })
@@ -66,15 +67,21 @@
                     this.equal.focus()
                     this.calculate()
                 }
+
+                if(e.key === 'Backspace') {
+                    this.deleteOne()
+                    this.backspace.focus()
+                }
             })
         }
 
         this.calculate = () => {
-            const result = eval(this.res.innerText)
+            const result = eval(this.res.innerText.replaceAll('x', '*'))
             this.res.innerText = result
         }
 
         this.addNumber = (value) => {
+            if (value === '+/-' || value === ',') return
             if (this.res.innerText === '0') this.res.innerText = value
             else {
                 this.res.innerText += value
@@ -86,7 +93,7 @@
             const operators = ['/', '+', '-', 'x']
             let lastCharacter = this.res.innerText.slice(-1)
 
-            if (this.res.innerText === '0' || value === '=') return
+            if (value === '=') return
             if (operators.includes(lastCharacter)) {
                 this.res.innerText = this.res.innerText.slice(0, -1) + value
             }
@@ -99,7 +106,7 @@
 
         this.ac = () => this.res.innerText = '0'
 
-        this.backspace = () => {
+        this.deleteOne = () => {
             this.res.innerText = this.res.innerText.slice(0, -1)
             if (this.res.innerText === '') this.res.innerText = '0'
         }
